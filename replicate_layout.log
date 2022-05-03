@@ -1,0 +1,116 @@
+07-13 19:35:19 replicate_layout.action_replicate_layout 311:Plugin executed on: 'win32'
+07-13 19:35:19 replicate_layout.action_replicate_layout 312:Plugin executed with python version: '2.7.18 (default, Apr 20 2020, 16:57:11)  [GCC 9.3.0 64 bit (AMD64)]'
+07-13 19:35:19 replicate_layout.action_replicate_layout 313:KiCad build version: (5.1.9)-1
+07-13 19:35:19 replicate_layout.action_replicate_layout 314:Replicate layout plugin version: 73 started
+07-13 19:35:19 replicate_layout.action_replicate_layout 327:All top level windows titles are:
+kicad (5.1.9)-1 c:\users\zero\documents\ee\esp32_6ch_dimmer\esp32_6ch_dimmer\esp32_6ch_dimmer.pro
+
+eeschema — channel.sch [/channel0/] — c:\users\zero\documents\ee\esp32_6ch_dimmer\esp32_6ch_dimmer
+
+pcbnew — c:\users\zero\documents\ee\esp32_6ch_dimmer\esp32_6ch_dimmer\esp32_6ch_dimmer.kicad_pcb
+
+
+07-13 19:35:19 replicate_layout.action_replicate_layout 328:All top level windows objects are:
+ <wx._windows.Frame; proxy of <Swig Object of type 'wxFrame *' at 0x4f216d0> >
+<wx._windows.Frame; proxy of <Swig Object of type 'wxFrame *' at 0x4f28380> >
+<wx._windows.Frame; proxy of <Swig Object of type 'wxFrame *' at 0x3122db90> >
+<wx._windows.Frame; proxy of <Swig Object of type 'wxFrame *' at 0x5cbbce20> >
+<wx._windows.Frame; proxy of <Swig Object of type 'wxFrame *' at 0x4e548030> >
+<wx._windows.Frame; proxy of <Swig Object of type 'wxFrame *' at 0x5cbbe2c0> >
+<wx._windows.Frame; proxy of <Swig Object of type 'wxFrame *' at 0x5cbbc740> >
+07-13 19:35:19 replicate_layout.action_replicate_layout 351:Preparing replicator with F1 as a reference
+07-13 19:35:19 replicate_layout.replicatelayout 215:getting project hierarchy from schematics
+07-13 19:35:19 replicate_layout.replicatelayout 217:Project hierarchy looks like:
+{u'60ED9BE1': [u'channel0', u'C:\\Users\\zero\\Documents\\EE\\esp32_6ch_dimmer\\esp32_6ch_dimmer\\channel.sch'], u'60EED22E': [u'channel5', u'C:\\Users\\zero\\Documents\\EE\\esp32_6ch_dimmer\\esp32_6ch_dimmer\\channel.sch'], u'60EED22A': [u'channel4', u'C:\\Users\\zero\\Documents\\EE\\esp32_6ch_dimmer\\esp32_6ch_dimmer\\channel.sch'], u'60EEAC65': [u'channel3', u'C:\\Users\\zero\\Documents\\EE\\esp32_6ch_dimmer\\esp32_6ch_dimmer\\channel.sch'], u'60EEA9BD': [u'channel2', u'C:\\Users\\zero\\Documents\\EE\\esp32_6ch_dimmer\\esp32_6ch_dimmer\\channel.sch'], u'60EEA7DB': [u'channel1', u'C:\\Users\\zero\\Documents\\EE\\esp32_6ch_dimmer\\esp32_6ch_dimmer\\channel.sch']}
+07-13 19:35:19 replicate_layout.replicatelayout 225:getting a list of all footprints on board
+07-13 19:35:19 replicate_layout.action_replicate_layout 378:source anchor footprint is u'F1'
+Located on:[u'channel0']
+With filenames:[u'channel.sch']
+With sheet_id:[u'channel0']
+07-13 19:35:19 replicate_layout.action_replicate_layout 382:Corresponding footprints are 
+[(u'F6', [u'channel5']), (u'F5', [u'channel4']), (u'F4', [u'channel3']), (u'F3', [u'channel2']), (u'F2', [u'channel1']), (u'F1', [u'channel0'])]
+07-13 19:35:19 replicate_layout.action_replicate_layout 395:Showing dialog
+07-13 19:35:19 replicate_layout.replicatelayout 249:construcing a list of sheets suitable for replication on level:u'channel0', file:u'channel.sch'
+07-13 19:35:19 replicate_layout.replicatelayout 256:Source sheet path up to the level:[u'channel0']
+07-13 19:35:19 replicate_layout.replicatelayout 260:Footprints on the sheets:
+[u'F6', u'F5', u'F4', u'F3', u'F2', u'F1']
+07-13 19:35:19 replicate_layout.replicatelayout 263:Footprints raw sheet ids:
+[u'/60EED22E/60EE1FC2', u'/60EED22A/60EE1FC2', u'/60EEAC65/60EE1FC2', u'/60EEA9BD/60EE1FC2', u'/60EEA7DB/60EE1FC2', u'/60ED9BE1/60EE1FC2']
+07-13 19:35:19 replicate_layout.replicatelayout 279:All sheets to replicate:
+[[u'channel5'], [u'channel4'], [u'channel3'], [u'channel2'], [u'channel1'], [u'channel0']]
+07-13 19:35:19 replicate_layout.replicatelayout 284:All sheets to replicate sorted:
+[[u'channel0'], [u'channel1'], [u'channel2'], [u'channel3'], [u'channel4'], [u'channel5']]
+07-13 19:35:19 replicate_layout.replicatelayout 290:All sheets to replicate sorted and without source sheet:
+[[u'channel1'], [u'channel2'], [u'channel3'], [u'channel4'], [u'channel5']]
+07-13 19:35:19 replicate_layout.action_replicate_layout 399:Pcbnew position: wx.Point(-8, -8)
+07-13 19:35:19 replicate_layout.action_replicate_layout 405:Display 0: wx.Rect(2560, 0, 1920, 1080)
+07-13 19:35:19 replicate_layout.action_replicate_layout 405:Display 1: wx.Rect(-1920, 0, 1920, 1080)
+07-13 19:35:19 replicate_layout.action_replicate_layout 405:Display 2: wx.Rect(0, 0, 2560, 1440)
+07-13 19:35:19 replicate_layout.action_replicate_layout 409:Toolbar position: wx.Point(2362, 115)
+07-13 19:35:19 replicate_layout.action_replicate_layout 416:Dialog position: wx.Point(2049, 115)
+07-13 19:35:21 replicate_layout.replicatelayout 249:construcing a list of sheets suitable for replication on level:u'channel0', file:u'channel.sch'
+07-13 19:35:21 replicate_layout.replicatelayout 256:Source sheet path up to the level:[u'channel0']
+07-13 19:35:21 replicate_layout.replicatelayout 260:Footprints on the sheets:
+[u'F6', u'F5', u'F4', u'F3', u'F2', u'F1']
+07-13 19:35:21 replicate_layout.replicatelayout 263:Footprints raw sheet ids:
+[u'/60EED22E/60EE1FC2', u'/60EED22A/60EE1FC2', u'/60EEAC65/60EE1FC2', u'/60EEA9BD/60EE1FC2', u'/60EEA7DB/60EE1FC2', u'/60ED9BE1/60EE1FC2']
+07-13 19:35:21 replicate_layout.replicatelayout 279:All sheets to replicate:
+[[u'channel5'], [u'channel4'], [u'channel3'], [u'channel2'], [u'channel1'], [u'channel0']]
+07-13 19:35:21 replicate_layout.replicatelayout 284:All sheets to replicate sorted:
+[[u'channel0'], [u'channel1'], [u'channel2'], [u'channel3'], [u'channel4'], [u'channel5']]
+07-13 19:35:21 replicate_layout.replicatelayout 290:All sheets to replicate sorted and without source sheet:
+[[u'channel1'], [u'channel2'], [u'channel3'], [u'channel4'], [u'channel5']]
+07-13 19:35:21 replicate_layout.action_replicate_layout 185:Replicating layout
+07-13 19:35:21 replicate_layout.replicatelayout 994:Starting replication of sheets: [[u'channel1'], [u'channel2'], [u'channel3'], [u'channel4'], [u'channel5']]
+on level: [u'channel0']
+with tracks=True, zone=True, text=True, containing=True, remove=False, locked=False
+07-13 19:35:21 root 267:updating GUI message: 'Preparing for replication'
+07-13 19:35:21 replicate_layout.replicatelayout 556:Getting the list of source footprints
+07-13 19:35:21 replicate_layout.replicatelayout 560:Getting the list of all the remaining footprints
+07-13 19:35:21 replicate_layout.replicatelayout 564:Getting nets local to source footprints
+07-13 19:35:21 replicate_layout.replicatelayout 568:Getting source bounding box
+07-13 19:35:21 root 272:updating GUI with: 37
+07-13 19:35:21 replicate_layout.replicatelayout 572:Getting source tracks
+07-13 19:35:21 replicate_layout.replicatelayout 576:Getting source zones
+07-13 19:35:21 replicate_layout.replicatelayout 580:Getting source text items
+07-13 19:35:21 replicate_layout.replicatelayout 584:Getting source text items
+07-13 19:35:21 root 267:updating GUI message: 'Replicating footprints'
+07-13 19:35:21 replicate_layout.replicatelayout 590:Replicating footprints
+07-13 19:35:21 replicate_layout.replicatelayout 596:Replicating footprints on sheet [u'channel1']
+07-13 19:35:21 replicate_layout.replicatelayout 596:Replicating footprints on sheet [u'channel2']
+07-13 19:35:21 root 272:updating GUI with: 35
+07-13 19:35:21 replicate_layout.replicatelayout 596:Replicating footprints on sheet [u'channel3']
+07-13 19:35:21 replicate_layout.replicatelayout 596:Replicating footprints on sheet [u'channel4']
+07-13 19:35:21 root 272:updating GUI with: 70
+07-13 19:35:21 replicate_layout.replicatelayout 596:Replicating footprints on sheet [u'channel5']
+07-13 19:35:21 root 272:updating GUI with: 100
+07-13 19:35:21 root 267:updating GUI message: 'Replicating tracks'
+07-13 19:35:21 replicate_layout.replicatelayout 720:Replicating tracks
+07-13 19:35:21 replicate_layout.replicatelayout 726:Replicating tracks on sheet [u'channel1']
+07-13 19:35:21 replicate_layout.replicatelayout 726:Replicating tracks on sheet [u'channel2']
+07-13 19:35:21 replicate_layout.replicatelayout 726:Replicating tracks on sheet [u'channel3']
+07-13 19:35:21 replicate_layout.replicatelayout 726:Replicating tracks on sheet [u'channel4']
+07-13 19:35:21 replicate_layout.replicatelayout 726:Replicating tracks on sheet [u'channel5']
+07-13 19:35:21 root 267:updating GUI message: 'Replicating zones'
+07-13 19:35:21 replicate_layout.replicatelayout 771:Replicating zones
+07-13 19:35:21 replicate_layout.replicatelayout 778:Replicating zones on sheet [u'channel1']
+07-13 19:35:21 replicate_layout.replicatelayout 778:Replicating zones on sheet [u'channel2']
+07-13 19:35:21 root 272:updating GUI with: 40
+07-13 19:35:21 replicate_layout.replicatelayout 778:Replicating zones on sheet [u'channel3']
+07-13 19:35:21 replicate_layout.replicatelayout 778:Replicating zones on sheet [u'channel4']
+07-13 19:35:21 replicate_layout.replicatelayout 778:Replicating zones on sheet [u'channel5']
+07-13 19:35:21 root 267:updating GUI message: 'Replicating text'
+07-13 19:35:21 replicate_layout.replicatelayout 837:Replicating text
+07-13 19:35:21 replicate_layout.replicatelayout 844:Replicating text on sheet [u'channel1']
+07-13 19:35:21 replicate_layout.replicatelayout 844:Replicating text on sheet [u'channel2']
+07-13 19:35:21 replicate_layout.replicatelayout 844:Replicating text on sheet [u'channel3']
+07-13 19:35:21 replicate_layout.replicatelayout 844:Replicating text on sheet [u'channel4']
+07-13 19:35:21 replicate_layout.replicatelayout 844:Replicating text on sheet [u'channel5']
+07-13 19:35:21 root 267:updating GUI message: 'Replicating drawings'
+07-13 19:35:21 replicate_layout.replicatelayout 868:Replicating drawings
+07-13 19:35:21 replicate_layout.replicatelayout 874:Replicating drawings on sheet [u'channel1']
+07-13 19:35:21 replicate_layout.replicatelayout 874:Replicating drawings on sheet [u'channel2']
+07-13 19:35:21 replicate_layout.replicatelayout 874:Replicating drawings on sheet [u'channel3']
+07-13 19:35:21 replicate_layout.replicatelayout 874:Replicating drawings on sheet [u'channel4']
+07-13 19:35:21 replicate_layout.replicatelayout 874:Replicating drawings on sheet [u'channel5']
+07-13 19:35:21 replicate_layout.action_replicate_layout 207:Replication complete

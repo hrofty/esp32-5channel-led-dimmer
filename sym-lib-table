@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name "esp32_dimmer_rtc-rescue")(type "Legacy")(uri "${KIPRJMOD}/esp32_dimmer_rtc-rescue.lib")(options "")(descr ""))
+  (lib (name "crumpschemes")(type "Legacy")(uri "${KIPRJMOD}/CrumpSchemes-master/crumpschemes.lib")(options "")(descr ""))
+  (lib (name "ai-thinker nodemcu-32s")(type "KiCad")(uri "C:/dev/EE/libs/symbols/ai-thinker nodemcu-32s.kicad_sym")(options "")(descr ""))
+)

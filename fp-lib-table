@@ -1,0 +1,7 @@
+(fp_lib_table
+  (lib (name "esp32_devkit_v1_doit")(type "KiCad")(uri "${KIPRJMOD}/kicad-master-footprints-esp32_devkit_v1_doit.pretty/footprints/esp32_devkit_v1_doit.pretty")(options "")(descr ""))
+  (lib (name "lm2596")(type "KiCad")(uri "${KIPRJMOD}/lm2596")(options "")(descr ""))
+  (lib (name "CrumpSchemes-master")(type "KiCad")(uri "${KIPRJMOD}/CrumpSchemes-master")(options "")(descr ""))
+  (lib (name "MY")(type "KiCad")(uri "${KIPRJMOD}/MYLIB")(options "")(descr ""))
+  (lib (name "footprints")(type "KiCad")(uri "C:/dev/EE/libs/footprints")(options "")(descr ""))
+)
