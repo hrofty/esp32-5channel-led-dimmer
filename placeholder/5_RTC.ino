@@ -1,7 +1,7 @@
 uRTCLib rtc(0x68);
 
 void SetRTC(){
-  //rtc.set(0, 42, 16, 6, 2, 5, 15);
+  //rtc.set(0, 26, 16, 7, 15, 5, 22);
 	// second, minute, hour, dayOfWeek, dayOfMonth, month, year
 }
 
