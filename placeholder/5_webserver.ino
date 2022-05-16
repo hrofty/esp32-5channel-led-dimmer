@@ -3,53 +3,46 @@ WebServer server(80);
 
 void server_setup() {
   server.on("/", handle_OnConnect);
-  server.on("/led1on", handle_led1on);
-  server.on("/led1off", handle_led1off);
+  server.on("/update_pos", handle_UpdatePos);
   server.onNotFound(handle_NotFound);
   server.begin();
 
 }
 
 void handle_OnConnect() {
-  LED1status = LOW;
-  LED2status = LOW;
-  server.send(200, "text/html", SendHTML(LED1status,LED2status)); 
+  server.send(200, "text/html", SendHTML(0)); 
 }
-void handle_led1on() {
-  LED1status = HIGH;
-  server.send(200, "text/html", SendHTML(true,LED2status)); 
-}
-void handle_led1off() {
-  LED1status = LOW;
-  server.send(200, "text/html", SendHTML(false,LED2status)); 
+
+void handle_UpdatePos() {
+  //TODO
+  server.send(200, "text/html", SendHTML(0)); 
 }
  
 
 void handle_NotFound(){
   server.send(404, "text/plain", "Not found");
 }
-String SendHTML(uint8_t led1stat,uint8_t led2stat){
-  String ptr = "<!DOCTYPE html> <html><title>\n";
-  ptr += boardname;
-  ptr +="</title><style>\n";
-  ptr +="  \n";
-  ptr +="</style></head><body>\n";
-  
-  ptr +="<h1>\n";
-  ptr += boardname;
-  ptr +="</h1>\n";
-  
-   if(led1stat)
-  {ptr +="<p>Состояние LED1: ВКЛ.</p><a class=\"button button-off\" href=\"/led1off\">ВЫКЛ.</a>\n";}
-  else
-  {ptr +="<p>Состояние LED1: ВЫКЛ.</p><a class=\"button button-on\" href=\"/led1on\">ВКЛ.</a>\n";}
-  if(led2stat)
-  {ptr +="<p>Состояние LED2: ВКЛ.</p><a class=\"button button-off\" href=\"/led2off\">ВЫКЛ.</a>\n";}
-  else
-  {ptr +="<p>Состояние LED2: ВЫКЛ.</p><a class=\"button button-on\" href=\"/led2on\">ВКЛ.</a>\n";}
 
-  
-  ptr +="</body></html>\n";
-  
+String SendHTML(uint8_t pos){
+  String ptr = "<!DOCTYPE html><html><title>\n";
+  ptr += boardname;
+  ptr += "</title><style></style></head><body><h1>\n";
+  ptr += boardname;
+  ptr += "</h1><h2>time:\n";
+  ptr += TellTime();
+  ptr += "</h2>\n";
+  ptr += "<form action=\"/update_pos\">Pos:&nbsp;<input type=\"number\" id=\"pos\" name=\"pos\"min=0 max=240 value=0>&nbsp;min: 0-0, 1-6, 2-12, 3-18, 4-24, 5-30, 6-36, 7-42, 8-48, 9-54<br>\n";
+  ptr += "R:&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"number\" id=\"r_val\" name=\"pos\"min=0 max=8192 value=4096>\n";
+  ptr += "<input type=\"range\" min=\"0\" max=\"8192\" value=\"4096\" class=\"slider\" id=\"r_slide\" oninput=\"document.getElementById('r_val').value = this.value\"><br>  \n";
+  ptr += "G:&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"number\" id=\"g_val\" name=\"pos\"min=0 max=8192 value=4096> \n";
+  ptr += "<input type=\"range\" min=\"0\" max=\"8192\" value=\"4096\" class=\"slider\" id=\"g_slide\" oninput=\"document.getElementById('g_val').value = this.value\"><br> \n";
+  ptr += "B:&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"number\" id=\"b_val\" name=\"pos\"min=0 max=8192 value=4096> \n";
+  ptr += "<input type=\"range\" min=\"0\" max=\"8192\" value=\"4096\" class=\"slider\" id=\"b_slide\" oninput=\"document.getElementById('b_val').value = this.value\"><br> \n";
+  ptr += "CW:&nbsp;<input type=\"number\" id=\"cw_val\" name=\"pos\" min=0 max=8192 value=4096> \n";
+  ptr += "<input type=\"range\" min=\"0\" max=\"8192\" value=\"4096\" class=\"slider\" id=\"cw_slide\" oninput=\"document.getElementById('cw_val').value = this.value\"><br> \n";
+  ptr += "WW:<input type=\"number\" id=\"ww_val\" name=\"pos\"min=0 max=8192 value=4096> \n";
+  ptr += "<input type=\"range\" min=\"0\" max=\"8192\" value=\"4096\" class=\"slider\" id=\"ww_slide\" oninput=\"document.getElementById('ww_val').value = this.value\"><br> \n";
+  ptr += "<br><input type=\"submit\" value=\"Update\"> \n";
+  ptr += "</form><script></script></body></html> \n";
   return ptr;
 }

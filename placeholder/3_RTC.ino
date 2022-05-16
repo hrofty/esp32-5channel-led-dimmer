@@ -31,3 +31,11 @@ void PrintTime(){
 	Serial.print(now());
 	Serial.println();
 }
+
+String TellTime(){
+  String nowtime = String(hour());
+  nowtime += ":";
+  nowtime += String(minute());
+  nowtime += "\n";
+  return nowtime;
+}

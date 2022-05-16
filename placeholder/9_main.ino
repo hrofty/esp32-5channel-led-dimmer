@@ -18,7 +18,7 @@ void setup() {
   //AllOn();
   do_settings();
   OTA_Setup();
-  server_setup()
+  server_setup();
   RTCsetup();
   
   // xTaskCreatePinnedToCore(TimeWorker, "Timeliner", 1024, NULL, 1, &TimeWorker_handler, 1);
