@@ -2,6 +2,8 @@ void setup_timeline() {
   TIMELINE[150] = (RGBCWWW) {1, 2, 3, 4, 5};
 }
 
+
+
 void printtimeline(uint8_t i) {
 Serial.print("TIMELINE:");
 Serial.print(i);
@@ -24,4 +26,3 @@ uint8_t CurrentPos(){
  uint8_t pos = h + m;
  return pos;
 }
-

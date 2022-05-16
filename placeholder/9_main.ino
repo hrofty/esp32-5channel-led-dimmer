@@ -11,23 +11,22 @@ void setup() {
   ledcAttachPin(CHANNEL_PINS[3], 3);
   ledcAttachPin(CHANNEL_PINS[4], 4);
 
-  //delay(1000);
-  //StripTest();
-  delay(1000);
-  AllOn();
-  do_settings();
 
   Serial.begin(115200);
+  //StripTest();
+  //delay(1000);
+  //AllOn();
+  do_settings();
+  OTA_Setup();
+  server_setup()
   RTCsetup();
+  
+  // xTaskCreatePinnedToCore(TimeWorker, "Timeliner", 1024, NULL, 1, &TimeWorker_handler, 1);
 }
 
 void loop() {
-  //AllOn();
-  //delay(3000);                       
-  //AllOff();
-  //delay(3000);
-  Serial.print("Read name = ");
-  Serial.println(boardname); 
-  PrintTime();
-  delay(3000);
+ if(wl_connected == true){
+    ArduinoOTA.handle();
+    server.handleClient();
+  }
 }

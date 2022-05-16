@@ -15,34 +15,35 @@ void CurrentBrightness(){
 	if (npos >= 240){
 		npos = 0;
 	}
-	//uint16_t brightness = map(p, 0, 360, TIMELINE[pos], TIMELINE[npos]);
+	uint16_t r = map(p, 0, 360, TIMELINE[pos].r, TIMELINE[npos].r);
+	uint16_t g = map(p, 0, 360, TIMELINE[pos].g, TIMELINE[npos].g);
+  uint16_t b = map(p, 0, 360, TIMELINE[pos].b, TIMELINE[npos].b);
+ 	uint16_t cw = map(p, 0, 360, TIMELINE[pos].cw, TIMELINE[npos].cw); 
+  uint16_t ww = map(p, 0, 360, TIMELINE[pos].ww, TIMELINE[npos].ww);
 
-	Serial.print("T:");
-  Serial.print(hour(t));
-  Serial.print(':');
-	Serial.print(minute(t));
-	Serial.print(':');
-	Serial.print(second(t));
-	Serial.print(" U:");
-	Serial.print(now());
+  // ledcWrite(0, r);
+  // ledcWrite(1, g);
+  // ledcWrite(2, b);
+  // ledcWrite(3, cw);
+  // ledcWrite(4, ww);
+
+
+
 	Serial.print(" pos:");
  	Serial.print(pos);
 	Serial.print(" npos:");
- 	Serial.println(npos);
-	Serial.print(d);
-	Serial.print(":");
-	Serial.print(m);
-	Serial.print(":");
+ 	Serial.print(npos);
+	Serial.print(" p:");
 	Serial.println(p);
+  Serial.print("r:");
+ 	Serial.print(r);
+	Serial.print(" from:");
+ 	Serial.print(TIMELINE[pos].r);
+	Serial.print(" to:");
+	Serial.println(TIMELINE[npos].r);
+
 }
 
-// void ledset (RGBCWWW* set){
-//   ledcWrite(0, constrain(set.r, 0, MAXDUTY));
-//   ledcWrite(1, constrain(set.g, 0, MAXDUTY));
-//   ledcWrite(2, constrain(set.b, 0, MAXDUTY));
-//   ledcWrite(3, constrain(set.cw, 0, MAXDUTY));
-//   ledcWrite(4, constrain(set.ww, 0, MAXDUTY));
-// }
 
 void AllOff(){
   // RGBCWWW Alloff = {0, 0, 0, 0, 0};
