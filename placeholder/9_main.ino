@@ -16,12 +16,14 @@ void setup() {
   //StripTest();
   //delay(1000);
   //AllOn();
+
+  RTCsetup();
   do_settings();
   OTA_Setup();
-  server_setup();
-  RTCsetup();
-  
-  // xTaskCreatePinnedToCore(TimeWorker, "Timeliner", 1024, NULL, 1, &TimeWorker_handler, 1);
+  //server_setup(); 
+  //xTaskCreatePinnedToCore(TimeWorker, "Timeliner", 1024, NULL, 1, &TimeWorker_handler, 1);
+
+  //Save_timeline();
 }
 
 void loop() {

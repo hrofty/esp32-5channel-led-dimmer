@@ -14,6 +14,7 @@ void do_settings(){
   EEPROM.begin(2500);
   //first_setup(); //Enable for the first flash!
   EEPROM.get(1, cfg);
+  //EEPROM.get(2, TIMELINE);
   EEPROM.end();
   boardname += cfg.boardid;
 }

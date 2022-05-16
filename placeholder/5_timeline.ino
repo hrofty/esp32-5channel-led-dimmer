@@ -1,8 +1,20 @@
-void setup_timeline() {
-  TIMELINE[150] = (RGBCWWW) {1, 2, 3, 4, 5};
+
+
+void Save_timeline(){
+    EEPROM.begin(2500);
+    EEPROM.put(2, TIMELINE);
+    EEPROM.commit();
+    EEPROM.end();
+  }
+
+void timeline_updater(uint8_t newpos, 
+                      uint16_t new_r,  
+                      uint16_t new_g,  
+                      uint16_t new_b,  
+                      uint16_t new_cw,  
+                      uint16_t new_ww){
+  TIMELINE[newpos] = (RGBCWWW) {new_r, new_g, new_b, new_cw, new_ww};
 }
-
-
 
 void printtimeline(uint8_t i) {
 Serial.print("TIMELINE:");

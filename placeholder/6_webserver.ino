@@ -1,9 +1,10 @@
-WebServer server(80);
+
 
 
 void server_setup() {
   server.on("/", handle_OnConnect);
   server.on("/update_pos", handle_UpdatePos);
+  server.on("/save", save_timeline);
   server.onNotFound(handle_NotFound);
   server.begin();
 
@@ -14,10 +15,20 @@ void handle_OnConnect() {
 }
 
 void handle_UpdatePos() {
-  //TODO
+  uint8_t newpos = server.arg(0).toInt();
+  uint16_t new_r = server.arg(1).toInt();
+  uint16_t new_g = server.arg(2).toInt();
+  uint16_t new_b = server.arg(3).toInt();
+  uint16_t new_cw = server.arg(4).toInt();
+  uint16_t new_ww = server.arg(5).toInt();
+  timeline_updater(newpos, new_r, new_g, new_b, new_cw, new_ww);
   server.send(200, "text/html", SendHTML(0)); 
 }
- 
+
+void save_timeline() {
+  Save_timeline();
+  server.send(200, "text/plain", "Timeline Saved"); 
+}
 
 void handle_NotFound(){
   server.send(404, "text/plain", "Not found");
@@ -43,6 +54,7 @@ String SendHTML(uint8_t pos){
   ptr += "WW:<input type=\"number\" id=\"ww_val\" name=\"pos\"min=0 max=8192 value=4096> \n";
   ptr += "<input type=\"range\" min=\"0\" max=\"8192\" value=\"4096\" class=\"slider\" id=\"ww_slide\" oninput=\"document.getElementById('ww_val').value = this.value\"><br> \n";
   ptr += "<br><input type=\"submit\" value=\"Update\"> \n";
+  ptr += "<br><form action=\"/save\"><button type=\"submit\">SAVE TO EEPROM</button></form> \n";  
   ptr += "</form><script></script></body></html> \n";
   return ptr;
 }

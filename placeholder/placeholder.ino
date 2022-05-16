@@ -1,4 +1,3 @@
-#include <Preferences.h>
 #include <TimeLib.h>
 #include <Wire.h>
 #include <DS1307RTC.h>
@@ -13,7 +12,7 @@
 #define MAXDUTY 8192  // 8192 for 13 bit timer ( 2 ** LEDC_TIMER;) 
 uint8_t CHANNEL_PINS[] = {19, 18, 17, 32, 33};// PWM PINs
 String boardname = "GEOESP";
-
+WebServer server(80);
 
 #define WIFI_TIMEOUT 20000
 bool wl_connected = false;

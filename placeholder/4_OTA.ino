@@ -4,7 +4,8 @@ void wifi_keepalive(void *pvParameters){
         if(wl_connected != true){
               wl_connected = true;
               digitalWrite(LED_BUILTIN, HIGH);
-              ArduinoOTA.begin(); 
+              ArduinoOTA.begin();
+              server_setup();
         }
         vTaskDelay(10000 / portTICK_PERIOD_MS);
         continue;
