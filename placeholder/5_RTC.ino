@@ -1,41 +1,33 @@
-uRTCLib rtc(0x68);
+
 
 void SetRTC(){
-  //rtc.set(0, 26, 16, 7, 15, 5, 22);
-	// second, minute, hour, dayOfWeek, dayOfMonth, month, year
+ // todo
 }
 
 void RTCsetup(){
-  URTCLIB_WIRE.begin();
-
+  Wire.begin(21, 22);
+  setSyncProvider(RTC.get);
+  setSyncInterval(RTCCHECKINTERVAL);
   //run only once!
-  SetRTC();
+  //SetRTC();
   
 }
 
 void PrintTime(){
-  rtc.refresh();
-
-	Serial.print("RTC DateTime: ");
-	Serial.print(rtc.year());
-	Serial.print('/');
-	Serial.print(rtc.month());
-	Serial.print('/');
-	Serial.print(rtc.day());
-
+  Serial.print("RTC DateTime: ");
+  Serial.print(hour());
+  Serial.print(':');
+	Serial.print(minute());
+	Serial.print(':');
+	Serial.print(second());
 	Serial.print(' ');
-
-	Serial.print(rtc.hour());
-	Serial.print(':');
-	Serial.print(rtc.minute());
-	Serial.print(':');
-	Serial.print(rtc.second());
-
-	Serial.print(" DOW: ");
-	Serial.print(rtc.dayOfWeek());
-
+	Serial.print(day());
+	Serial.print('/');
+	Serial.print(month());
+	Serial.print('/');
+	Serial.print(year());
+	Serial.print(' ');
+	Serial.print(" UNIX: ");
+	Serial.print(now());
 	Serial.println();
-
-	delay(1000);
-
 }
