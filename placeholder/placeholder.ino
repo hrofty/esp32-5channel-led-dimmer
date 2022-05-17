@@ -6,12 +6,17 @@
 #include <WebServer.h>
 #include <ArduinoOTA.h>
 
+bool debug = 0;
+
 #define LEDC_BASE_FREQ 5000 //LEDC base frequency
 #define LEDC_TIMER 13 //bit precission for LEDC timer
 #define RTCCHECKINTERVAL 3600 //timesync every hour
 #define MAXDUTY 8192  // 8192 for 13 bit timer ( 2 ** LEDC_TIMER;) 
 uint8_t CHANNEL_PINS[] = {19, 18, 17, 32, 33};// PWM PINs
+uint8_t cur_pos;
 String boardname = "GEOESP";
+
+
 WebServer server(80);
 
 #define WIFI_TIMEOUT 20000

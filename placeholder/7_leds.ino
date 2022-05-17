@@ -21,14 +21,6 @@ void CurrentBrightness(){
  	uint16_t cw = map(p, 0, 360, TIMELINE[pos].cw, TIMELINE[npos].cw); 
   uint16_t ww = map(p, 0, 360, TIMELINE[pos].ww, TIMELINE[npos].ww);
 
-  // ledcWrite(0, r);
-  // ledcWrite(1, g);
-  // ledcWrite(2, b);
-  // ledcWrite(3, cw);
-  // ledcWrite(4, ww);
-
-
-
 	Serial.print(" pos:");
  	Serial.print(pos);
 	Serial.print(" npos:");
@@ -87,4 +79,3 @@ void StripTest(){
   AllOff();
 
 }
-

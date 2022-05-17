@@ -8,9 +8,9 @@ void RTCsetup(){
   Wire.begin(21, 22);
   setSyncProvider(RTC.get);
   setSyncInterval(RTCCHECKINTERVAL);
-  //run only once!
-  //SetRTC();
   
+  //SetRTC(); //run only once to setup
+  PrintTime();
 }
 
 void PrintTime(){

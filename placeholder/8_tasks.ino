@@ -22,7 +22,8 @@ void TimeWorker(void *pvParameters) {
     ledcWrite(2, b);
     ledcWrite(3, cw);
     ledcWrite(4, ww);
-
+    cur_pos = pos;
+    if (debug){
   Serial.print(" pos:");
  	Serial.print(pos);
 	Serial.print(" npos:");
@@ -35,7 +36,7 @@ void TimeWorker(void *pvParameters) {
  	Serial.print(TIMELINE[pos].r);
 	Serial.print(" to:");
 	Serial.println(TIMELINE[npos].r);
-
+    };
 
     vTaskDelay(1000 / portTICK_PERIOD_MS);
   }

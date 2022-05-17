@@ -2,9 +2,10 @@
 
 void Save_timeline(){
     EEPROM.begin(2500);
-    EEPROM.put(2, TIMELINE);
+    EEPROM.put(50, TIMELINE);
     EEPROM.commit();
     EEPROM.end();
+    Serial.println("Timeline Saved");
   }
 
 void timeline_updater(uint8_t newpos, 

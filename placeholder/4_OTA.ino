@@ -3,9 +3,8 @@ void wifi_keepalive(void *pvParameters){
       if(WiFi.status() == WL_CONNECTED){
         if(wl_connected != true){
               wl_connected = true;
-              digitalWrite(LED_BUILTIN, HIGH);
               ArduinoOTA.begin();
-              server_setup();
+              server.begin();
         }
         vTaskDelay(10000 / portTICK_PERIOD_MS);
         continue;
@@ -15,6 +14,7 @@ void wifi_keepalive(void *pvParameters){
       if(wl_connected == true){
         digitalWrite(LED_BUILTIN, LOW);
         ArduinoOTA.end();
+        server.close();
         wl_connected = false;
       }
       WiFi.mode(WIFI_STA);
@@ -26,13 +26,6 @@ void wifi_keepalive(void *pvParameters){
         //wait for connection
         }
       if (WiFi.status() != WL_CONNECTED){
-        // digitalWrite(LED_BUILTIN, HIGH);
-        // vTaskDelay(100 / portTICK_PERIOD_MS);
-        // digitalWrite(LED_BUILTIN, LOW);
-        // vTaskDelay(100 / portTICK_PERIOD_MS);
-        // digitalWrite(LED_BUILTIN, HIGH);
-        // vTaskDelay(100 / portTICK_PERIOD_MS);
-        // digitalWrite(LED_BUILTIN, LOW);
         vTaskDelay(10000 / portTICK_PERIOD_MS);
         continue;
       }
