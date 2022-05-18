@@ -12,7 +12,6 @@ void wifi_keepalive(void *pvParameters){
       
       // Wifi not connected:
       if(wl_connected == true){
-        digitalWrite(LED_BUILTIN, LOW);
         ArduinoOTA.end();
         server.close();
         wl_connected = false;
@@ -36,6 +35,6 @@ void wifi_keepalive(void *pvParameters){
 void OTA_Setup(){
   ArduinoOTA.setHostname(boardname.c_str());
   ArduinoOTA.setPort(3232);
-//  ArduinoOTA.setPassword("admin");
+  //ArduinoOTA.setPassword("admin");
 xTaskCreate(wifi_keepalive, "WiFi Watchdog", 5120, NULL, 1, &wifi_handler);
 }

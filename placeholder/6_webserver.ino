@@ -13,6 +13,17 @@ void handle_UpdatePos() {
   server.send(200, "text/html", SendHTML(newpos)); 
 }
 
+void qpdate(){
+  uint8_t newpos = server.arg(0).toInt();
+  uint16_t new_r = server.arg(1).toInt();
+  uint16_t new_g = server.arg(2).toInt();
+  uint16_t new_b = server.arg(3).toInt();
+  uint16_t new_cw = server.arg(4).toInt();
+  uint16_t new_ww = server.arg(5).toInt();
+  timeline_updater(newpos, new_r, new_g, new_b, new_cw, new_ww);
+  server.send(200, "text/plain", "OK");
+  }
+
 void save_timeline() {
   Save_timeline();
   server.send(200, "text/plain", "Timeline Saved"); 
@@ -20,6 +31,38 @@ void save_timeline() {
 
 void handle_NotFound(){
   server.send(404, "text/plain", "Not found");
+}
+
+void superspeed(){
+  String msg = "Superspeed set to ";
+  if (!SUPERSPEED){
+    SUPERSPEED = 1;
+    }
+  else{
+    SUPERSPEED = 0;
+    }
+  msg += SUPERSPEED;
+    server.send(200, "text/plain", msg); 
+}
+
+void dumptimeline(){
+  String dump = "POS:R:G:B:CW:WW\n";
+  for (int i = 0; i < 240; i++){
+    dump += i;
+    dump += ":";
+    dump += TIMELINE[i].r;
+    dump += ":";
+    dump += TIMELINE[i].g;
+    dump += ":";
+    dump += TIMELINE[i].b;
+    dump += ":";
+    dump += TIMELINE[i].cw; 
+    dump += ":";
+    dump += TIMELINE[i].ww;
+    dump += "\n";        
+  } 
+  
+    server.send(200, "text/plain", dump); 
 }
 
 String SendHTML(uint8_t pos){
@@ -39,7 +82,7 @@ String SendHTML(uint8_t pos){
   ptr += " = ";
   ptr += cur_pos;
   ptr += "</h2>min: 0-0, 1-6, 2-12, 3-18, 4-24, 5-30, 6-36, 7-42, 8-48, 9-54\n";
-  ptr += "<form action=\"/update_pos\">Pos:&nbsp;<input type=\"number\" id=\"pos\" name=\"pos\"min=0 max=240 value=";
+  ptr += "<form action=\"/update_pos\">Pos:&nbsp;<input type=\"number\" id=\"pos\" name=\"pos\"min=0 max=239 value=";
   ptr += pos;
   ptr +=  ">&nbsp;";
   ptr += "<br>\n";
@@ -72,6 +115,9 @@ String SendHTML(uint8_t pos){
 void server_setup(){
   server.on("/", handle_OnConnect);
   server.on("/update_pos", handle_UpdatePos);
+  server.on("/qpdate", handle_UpdatePos);
   server.on("/save", save_timeline);
+  server.on("/dump", dumptimeline);
+  server.on("/speed", superspeed);
   server.onNotFound(handle_NotFound);
   }
